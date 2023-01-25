@@ -1,4 +1,4 @@
-import { ADD_TODO, DELETE_TODO, COMPLETE_TODO, SET_TODOS } from './todoActionTypes';
+import { ADD_TODO, DELETE_TODO, COMPLETE_TODO, SET_TODOS_SUCCESS, SET_TODOS_PENDING, SET_TODOS_ERROR } from './todoActionTypes';
 
 const initialState = {
   todos: [
@@ -20,6 +20,8 @@ const initialState = {
       completed: false,
     }
   ],
+  isLoading: false,
+  error: ''
 };
 
 export const todoReducer = (state = initialState, action) => {
@@ -43,9 +45,15 @@ export const todoReducer = (state = initialState, action) => {
     case DELETE_TODO:
       return {...state, todos: state.todos.filter(todo => action.payload !== todo.id)}
     
-    case SET_TODOS:
-      return {...state, todos: action.payload}
+    case SET_TODOS_PENDING:
+      return {...state, isLoading: true}
 
+    case SET_TODOS_SUCCESS:
+      return {...state, todos: action.payload, isLoading: false, error: ''}
+    
+    case SET_TODOS_ERROR:
+      return {...state, error: action.payload, isLoading: false}
+      
     default:
       return state
   }

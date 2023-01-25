@@ -6,6 +6,8 @@ import './Todos.css';
 const Todos = () => {
   const [inputValue, setInputValue] = useState('');
   const todos = useSelector(state => state.todo.todos);
+  const isLoading = useSelector(state => state.todo.isLoading);
+  const error = useSelector(state => state.todo.error);
   const dispatch = useDispatch();
 
   console.log(todos);
@@ -21,12 +23,17 @@ const Todos = () => {
     }
   }
 
-  // const buttonDeleteHandler = (id) => {
-  //   dispatch(actionDeleteTodo(id));
-  // }
-
   return (
     <div className = "todos">
+
+      {
+        isLoading && <h1>Loading...</h1>
+      }
+
+      {
+        error && <h1>{error}</h1>
+      }
+
       <div className="todos__form form">
         <button onClick={() => {dispatch(actionSetTodosAsync())}} className="form__get">Get todos from server</button>
         <input className="form__input" type="text" placeholder="todo" value={inputValue} onChange={inputHandler} />
