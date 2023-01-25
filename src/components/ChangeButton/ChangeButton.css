@@ -1,0 +1,12 @@
+.counter__button {
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 30px;
+    background-color: rgb(38, 157, 255);
+    color: #fff;
+    border-color: #fff;
+    cursor: pointer;
+}
+  .counter__button:hover {
+    background-color: rgb(35, 138, 223);
+  }

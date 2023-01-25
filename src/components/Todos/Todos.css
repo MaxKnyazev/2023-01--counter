@@ -1,0 +1,71 @@
+.todos {
+
+}
+
+  .form {
+    margin-bottom: 2rem;
+  }
+
+      .form__input {
+        width: 18vw;
+        height: 5vh;
+        padding: 0 5px 0 5px;
+        outline: none;
+      }
+      
+      .form__add {
+        width: 5vw;
+        height: 5vh;
+        cursor: pointer;
+        background-color: rgb(38, 157, 255);
+        color: #fff;
+        font-weight: bold;
+      }
+        .form__add:hover {
+          background-color: rgb(35, 138, 223);
+        }
+
+      .form__get {
+        width: 15vw;
+        height: 5vh;
+        cursor: pointer;
+        background-color: rgb(152, 209, 255);
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+      }
+        .form__get:hover {
+          background-color: rgb(100, 162, 212);
+        }
+
+  .todos__list {
+  }
+
+    .todo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+      .todo__title {
+        color: #fff;
+        font-size: 20px;
+      }
+
+      .todo__complete:checked + .todo__title {
+        color: gray;
+        font-style: italic;
+        text-decoration: line-through;
+      }
+
+      .todo__delete {
+        width: 5vw;
+        height: 4vh;
+        cursor: pointer;
+        background-color: red;
+        color: #fff;
+        font-weight: bold;
+      }
+        .todo__delete:hover {
+          background-color: rgb(197, 0, 0);
+        }
