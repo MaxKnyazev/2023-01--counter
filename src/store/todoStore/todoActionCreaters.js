@@ -1,8 +1,5 @@
 import { ADD_TODO, DELETE_TODO, COMPLETE_TODO, SET_TODOS_SUCCESS, SET_TODOS_PENDING, SET_TODOS_ERROR } from './todoActionTypes';
 
-// id, title, coompleted
-
-
 export const actionAddTodo = (title) => ({
   type: ADD_TODO,
   payload: title
@@ -44,7 +41,9 @@ export const actionSetTodosAsync = () => {
       } else {
         throw new Error('Ошибка при получении todos');
       }
-      console.log('-------------------------- test01 branch')
+
+console.log('------------------------>> main branch')
+
       // return todos;
     } catch (error) {
       dispatch(actionSetTodosError(error.message));
