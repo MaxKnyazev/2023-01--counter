@@ -41,10 +41,13 @@ export const actionSetTodosAsync = () => {
       } else {
         throw new Error('Ошибка при получении todos');
       }
-      console.log('------------------------>> main branch')
+
+console.log('------------------------>> main branch')
+
       // return todos;
     } catch (error) {
       dispatch(actionSetTodosError(error.message));
+      console.log('-------------------------- test01 branch')
       // return {
       //   error
       // }
